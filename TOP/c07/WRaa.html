@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "Worst Area"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "847.590000",  y:32},
+{ label: "1187.080000",  y:46},
+{ label: "1526.570000",  y:47},
+{ label: "1866.060000",  y:34},
+{ label: "2205.550000",  y:18},
+{ label: "2545.040000",  y:9},
+{ label: "2884.530000",  y:3},
+{ label: "3224.020000",  y:3},
+{ label: "3563.510000",  y:0},
+{ label: "3903.000000",  y:3}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

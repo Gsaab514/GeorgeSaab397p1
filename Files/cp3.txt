@@ -1,0 +1,9 @@
+		]
+	},
+	{
+		type: "column",
+		name: "Cancer in remission",
+		axisYType: "secondary",
+		showInLegend: true,
+		yValueFormatString: "#,##0.# patients",
+		dataPoints: [

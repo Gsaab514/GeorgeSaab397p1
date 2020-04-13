@@ -1,0 +1,33 @@
+1. I downloaded a dataset from UCI. 
+2. The raw files are in CancerData
+3. I edited wdbc.data in the cancerdata directory, I change the seperator from "," to " ". I also
+   change the indicator for cancer and recurrent from characters to 0 and 1. 
+4. The resulting files is stored in the project directory. 
+5. The script is in DataProcessing.awk 
+6. To run the code awk -f DataProcessing.awk wpbc.data 
+   the file produces a TOP directory containing index.html and
+   subdirectories c04-c14. Each directory contains 12 javascript plots.
+   aa.html   plots all the patients in groups of 10 in a bar graph
+   ca.html   plots cancerous patients in a group of 10 in a bar graph 
+   na.html   plots non-cancerous patients in a group of 10 in a bar graph
+   co.html   plots a comparison between the cancerous and con-cancerous for that measurement
+   the javascript was downloaded from canvasjs.com
+   the script is broken into 3 parts, p1.txt, p2.txt and p3.txt
+   the script generates a title which is stored temporarily in title.txt and a set of data to be plotted 
+   in file outf1
+   to generate the javascript issue a system command as follow 
+        
+        cmd = "cat ./Files/p1.txt title.txt ./Files/p2.txt outf1 ./Files/p3.txt  > "  cdir "/aa.html"
+       	system(cmd)
+    
+   this command generates the plot for all patients
+   similarly the data is collected and printed for ca and aa and system command is used 
+   
+7. There are 10 parameter measured 3 different ways the 6 is repeated for each way the parameter is measured 
+    the plots are stored in the appropriate directories under TOP
+    
+8.  I created using vi an index.html which points to the correct plot for each measurement, that file is stored
+    in Files
+    The script copies the index.html file into TOP directory each time the script runs
+
+9.  To view the results open index.html with any browser   

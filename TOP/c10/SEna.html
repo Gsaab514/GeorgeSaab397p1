@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "SE Concavity (severity of concave portions of the contour)"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "0.024226",  y:26},
+{ label: "0.037512",  y:53},
+{ label: "0.050798",  y:35},
+{ label: "0.064084",  y:14},
+{ label: "0.077370",  y:9},
+{ label: "0.090656",  y:6},
+{ label: "0.103942",  y:2},
+{ label: "0.117228",  y:1},
+{ label: "0.130514",  y:0},
+{ label: "0.143800",  y:2}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

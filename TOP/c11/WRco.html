@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+text: "Worst Concave points (number of concave portions of the contour)"	},
+	subtitles: [{
+		text: "Click Legend to Hide or Unhide Data Series"
+	}], 
+	axisX: {
+		title: "Size"
+	},
+	axisY: {
+		title: "# Patient in each Group",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "# Patient in each Group",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Cancer",
+		showInLegend: true,      
+		yValueFormatString: "#,##0.# patients",
+		dataPoints: [
+{ label: "0.055121",  y:1},
+{ label: "0.081252",  y:2},
+{ label: "0.107383",  y:7},
+{ label: "0.133514",  y:16},
+{ label: "0.159645",  y:21},
+{ label: "0.185776",  y:43},
+{ label: "0.211907",  y:29},
+{ label: "0.238038",  y:13},
+{ label: "0.264169",  y:0},
+{ label: "0.290300",  y:16}
+		]
+	},
+	{
+		type: "column",
+		name: "Cancer in remission",
+		axisYType: "secondary",
+		showInLegend: true,
+		yValueFormatString: "#,##0.# patients",
+		dataPoints: [
+{ label: "0.055121",  y:0},
+{ label: "0.081252",  y:0},
+{ label: "0.107383",  y:0},
+{ label: "0.133514",  y:4},
+{ label: "0.159645",  y:11},
+{ label: "0.185776",  y:10},
+{ label: "0.211907",  y:12},
+{ label: "0.238038",  y:6},
+{ label: "0.264169",  y:0},
+{ label: "0.290300",  y:4}
+		]
+	}]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

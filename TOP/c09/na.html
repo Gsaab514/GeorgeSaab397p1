@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "Compactness (perimeter^2 / area - 1.0)"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "0.072585",  y:15},
+{ label: "0.099120",  y:9},
+{ label: "0.125655",  y:40},
+{ label: "0.152190",  y:26},
+{ label: "0.178725",  y:26},
+{ label: "0.205260",  y:13},
+{ label: "0.231795",  y:12},
+{ label: "0.258330",  y:3},
+{ label: "0.284865",  y:0},
+{ label: "0.311400",  y:4}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

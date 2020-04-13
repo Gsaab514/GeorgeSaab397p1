@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "Texture (standard deviation of gray-scale values)"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "13.270000",  y:1},
+{ label: "16.160000",  y:4},
+{ label: "19.050000",  y:25},
+{ label: "21.940000",  y:46},
+{ label: "24.830000",  y:35},
+{ label: "27.720000",  y:20},
+{ label: "30.610000",  y:7},
+{ label: "33.500000",  y:7},
+{ label: "36.390000",  y:0},
+{ label: "39.280000",  y:3}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

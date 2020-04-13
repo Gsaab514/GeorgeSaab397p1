@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "Smoothness (local variation in radius lengths)"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "0.081943",  y:6},
+{ label: "0.088916",  y:14},
+{ label: "0.095889",  y:25},
+{ label: "0.102862",  y:36},
+{ label: "0.109835",  y:28},
+{ label: "0.116808",  y:19},
+{ label: "0.123781",  y:12},
+{ label: "0.130754",  y:3},
+{ label: "0.137727",  y:0},
+{ label: "0.144700",  y:5}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

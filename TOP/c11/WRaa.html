@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "Worst Concave points (number of concave portions of the contour)"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "0.055121",  y:1},
+{ label: "0.081252",  y:2},
+{ label: "0.107383",  y:7},
+{ label: "0.133514",  y:20},
+{ label: "0.159645",  y:32},
+{ label: "0.185776",  y:53},
+{ label: "0.211907",  y:41},
+{ label: "0.238038",  y:19},
+{ label: "0.264169",  y:0},
+{ label: "0.290300",  y:20}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

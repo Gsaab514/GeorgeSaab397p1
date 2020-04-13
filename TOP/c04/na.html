@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+    <script type="text/javascript">
+       window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+
+            title:{
+text: "Radius (mean of distances from center to points on the perimeter)"                   },
+		axisX:{
+			title: "Size",
+			interval: 1
+		},
+		axisY:{
+                        title: "# of patients in each group"
+                },
+            data: [//array of dataSeries              
+                     { //dataSeries object
+
+                        /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                        type: "bar",
+                        dataPoints: [
+{ label: "12.577000",  y:8},
+{ label: "14.204000",  y:19},
+{ label: "15.831000",  y:35},
+{ label: "17.458000",  y:24},
+{ label: "19.085000",  y:19},
+{ label: "20.712000",  y:26},
+{ label: "22.339000",  y:7},
+{ label: "23.966000",  y:7},
+{ label: "25.593000",  y:0},
+{ label: "27.220000",  y:3}
+                           ]
+                      }
+                    ]
+           });
+
+            chart.render();
+          }
+  </script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+ </head>
+ <body>
+    <div id="chartContainer" style="height: 600px; width: 85%;">
+       </div>
+ </body>
+</html>

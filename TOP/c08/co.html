@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+text: "Smoothness (local variation in radius lengths)"	},
+	subtitles: [{
+		text: "Click Legend to Hide or Unhide Data Series"
+	}], 
+	axisX: {
+		title: "Size"
+	},
+	axisY: {
+		title: "# Patient in each Group",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "# Patient in each Group",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Cancer",
+		showInLegend: true,      
+		yValueFormatString: "#,##0.# patients",
+		dataPoints: [
+{ label: "0.081943",  y:6},
+{ label: "0.088916",  y:14},
+{ label: "0.095889",  y:25},
+{ label: "0.102862",  y:36},
+{ label: "0.109835",  y:28},
+{ label: "0.116808",  y:19},
+{ label: "0.123781",  y:12},
+{ label: "0.130754",  y:3},
+{ label: "0.137727",  y:0},
+{ label: "0.144700",  y:5}
+		]
+	},
+	{
+		type: "column",
+		name: "Cancer in remission",
+		axisYType: "secondary",
+		showInLegend: true,
+		yValueFormatString: "#,##0.# patients",
+		dataPoints: [
+{ label: "0.081943",  y:0},
+{ label: "0.088916",  y:4},
+{ label: "0.095889",  y:9},
+{ label: "0.102862",  y:8},
+{ label: "0.109835",  y:12},
+{ label: "0.116808",  y:9},
+{ label: "0.123781",  y:5},
+{ label: "0.130754",  y:0},
+{ label: "0.137727",  y:0},
+{ label: "0.144700",  y:0}
+		]
+	}]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
